@@ -1,0 +1,19 @@
+[project]
+name = "probCOmp"
+version = 0.0.1
+authors = [
+    {name = ejkroon}
+]
+description = "Probabilistic method to compare ceramic chaînes 
+opératoires."
+readme = "README.md"
+requires-python = ">=3.12.4"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+]
+license = "MIT"
+license-file = "LICENSE"
+
+[project.url]
+Homepage = https://github.com/ejkroon/probCOmp
