@@ -4,7 +4,7 @@ from random import choices
 from scipy.stats import wasserstein_distance
 from scipy.stats import percentileofscore
 
-def check_target_node(G, path, target):
+def check_target_node(G:nx.DiGraph, path:list[str], target:str):
     """Function to check whether target node could be appended to a 
         path.
 
@@ -14,7 +14,7 @@ def check_target_node(G, path, target):
 
     Paramaters
     ----------
-    G : networkx DiGraph object
+    G : nx.DiGraph
         Directed graph representing the total chaîne opératoire.
     path : list
         List of nodes in which the 0th item is the path state and the 
@@ -42,11 +42,11 @@ def check_target_node(G, path, target):
     return check
 
 def generate_random_paths(
-                            G, 
-                            number, 
-                            termination_chance,
-                            initial_state = 'W',
-                            starting_node = 'Wet clay'
+                            G:nx.DiGraph, 
+                            number:int, 
+                            termination_chance:float,
+                            initial_state:str = 'W',
+                            starting_node:str = 'Wet clay'
                         ):
     """Function to generate paths through the total chaîne opératoire 
     for ceramics.
@@ -138,7 +138,10 @@ def generate_random_paths(
 
     return generated_paths
 
-def load_network(nodes, links):
+def load_network(
+        nodes:list[list[str]], 
+        links:list[list[str, float|int]]
+        ):
     """ Function to create networkx DiGraph object for total châîne opératoire.
 
     Paramaters
@@ -169,7 +172,7 @@ def load_network(nodes, links):
 
     return G
 
-def check_paths(G, paths):
+def check_paths(G:nx.DiGraph, paths:list[list[str]]):
     """Function to check whether the paths in a dataset are formatted 
     correctly.
 
@@ -238,7 +241,7 @@ def check_paths(G, paths):
 
     return check_state
 
-def load_paths_to_graph(G, paths):
+def load_paths_to_graph(G:nx.DiGraph, paths:list[list[str]]):
     """Function to obtain a weighted link list from a set of paths.
 
     Parameters
@@ -275,7 +278,10 @@ def load_paths_to_graph(G, paths):
 
     return link_list
 
-def compare_assemblages(a, b):
+def compare_assemblages(
+        a:list[list[str,float]], 
+        b:list[list[str,float]]
+        ):
     """"Function to calculate the Wasserstein distance between two subgraphs.
     
     The subgraphs are represented as weighted link lists of the networkx 
@@ -315,11 +321,11 @@ def compare_assemblages(a, b):
     return outcome
 
 def generate_control_from_link_list(
-                                    G, 
-                                    links, 
-                                    nodes, 
-                                    n_paths, 
-                                    termination_chance
+                                    G:nx.DiGraph, 
+                                    links:list[list[str, float|int]], 
+                                    nodes:list[list[str]], 
+                                    n_paths:int, 
+                                    termination_chance:float,
                                 ):
     """Helper function to randomly generate paths from a link list.
 
@@ -359,13 +365,13 @@ def generate_control_from_link_list(
     return link_list
 
 def permutation_test(
-                        G, 
-                        a_paths, 
-                        b_paths, 
-                        C, 
-                        control_size, 
-                        n_control, 
-                        termination_chance
+                        G:nx.DiGraph, 
+                        a_paths:list[list[str]], 
+                        b_paths:list[list[str]], 
+                        C:nx.DiGraph, 
+                        control_size:int, 
+                        n_control:int, 
+                        termination_chance:float,
                     ):
     """ Helper function to perform a permutation test with a control group.
     
