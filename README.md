@@ -2,11 +2,11 @@
 Probabilistic method to compare ceramic _chaînes opératoires_.
 
 ## Introduction
-This application uses the 
+TODO
 
 ## How to use
-Start by making a network representation of the total _ceramic chaîne 
-opératoire_.
+Start by making a network representation of the total _ceramic chaîne_ 
+_opératoire_.
 
 ```python
 #Assuming user loads nodes_list and links_list
@@ -14,9 +14,9 @@ nodes = nodes_list
 links = links_list
 G = load_network(nodes, links)
 ```
-It is recommended to use the links and edges provided in files/
-nodes_list.csv and files/link_list_uniform.csv for this purpose, since 
-the scripte expects the ID values in these files.
+It is recommended to use the links and edges provided in `files/`
+`nodes_list.csv` and `files/link_list_uniform.csv` for this purpose, 
+since the scripte expects the ID values in these files.
 
 You can then load data into this network representation. Empirical data 
 usually consists of paths (specific _chaînes opératoires_), but may also 
@@ -29,17 +29,105 @@ empirical_links1 = load_paths_to_graph(G, empirical_paths)
 
 #Or for a weighted link list
 empirical_links2 = dataset2
-
-#Two such empirical sets can be compared with:
-outcome = compare_assemblages(empirical_links1, empirical_links2)
 ```
 Again, these link lists and the techniques listed in the paths should 
-conform those specified in files
+conform those specified in `files/nodes_list.csv` and 
+`files/link_list_uniform.csv`. For datasets with paths, one can call a 
+built-in function to check these paths.
 
 ```python
-
+check_paths(G, empirical_paths)
 ```
-For more complete examples, see tests/tests.py.
+This method will flag inconsistencies such as incorrect syntax, missing 
+links, and nodes, etc.
+
+For empirical datasets consisting of weighted link lists, the comparison 
+below will return `None` if the link list is formatted incorrectly.
+
+Once both empirical datasets have been loaded in the network 
+representation. The Wasserstein distance between the two subgraphs can 
+be calculated:
+
+```python
+outcome = compare_assemblages(empirical_links1, empirical_links2)
+```
+
+The Wasserstein distance estimates the amount of shared technical 
+knowledge between the two datasets of specific _chaînes opératoires_
+(cf. Kroon 2024, Ch. 4). The strength of the probabilistic method 
+however, lies in its ability to incorporate control groups which can be 
+used to judge the significance of the Wasserstein distance between two 
+empirical datasets and to quantitatively test assumptions about the 
+relations between ceramic assemblages.
+
+Control groups can consist of empirical datasets with paths, in which 
+case one may compare them to the other datasets following the procedure 
+above. Alternatively, control groups with can be generated based on a
+stochastic process or based on existing data (_random path generation_ 
+and _guided random path generation_, respectively in Kroon 2024, 69-73). 
+In this script, these operations can be performed as follows.
+
+```python
+#Random path generation
+control_paths = generate_random_paths(
+    G, 
+    number = 1000, 
+    termination_chance = 0.5
+    )
+
+#Guided random path generation based on weighted link list
+C = load_network(
+    nodes, 
+    links = weighted_link_list
+    )
+control_paths = generate_random_paths(
+    C, 
+    number = 1000, 
+    termination_chance = 0.5
+    )
+
+#Either way: Obtain edge weight distribution for control group
+control_group = load_paths_to_graph(G, control_paths)
+
+#And compare to empirical dataset
+outcome = compare_assemblages(empirical_links1, control_group)
+```
+Where:
+- `G` has uniform edge weights;
+- `C` has edge weights based on empirical data;
+- `number` is the number of random paths to be generated;
+- and `termination_chance` is the chance a production process stops with 
+  each new step after firing.
+
+Lastly, this script also incorporates a functionality for performing a 
+permutation test. This test compares source of the comparison 
+(`empirical_links1` in the examples above) against a large number of 
+small control groups and calculates the percentile of the Wasserstein 
+distance between the empirical groups against the Wasserstein distances 
+to these control groups. As such, it estimates how exceptional the 
+amount of shared knowledge is relative to the control group.
+
+The permutation test can be performed as follows:
+
+```python
+score, percentile, control_scores = permutation_test(
+    G=G, 
+    a_paths = empirical_paths1, 
+    b_paths = empirical_paths2, 
+    C=C, 
+    control_size = 100, 
+    n_control = 1000,
+    termination_chance = 1.0
+    )
+```
+Where:
+- `score` is the Wasserstein distance between the empirical datatsets;
+- `percentile` is the percentile of that score relative to the controls
+- `control_size` is the number of paths in each control group;
+- `n_control` is the number of control groups to use;
+- and `control_scores` are the Wasserstein distances to the controls.
+
+For further coding examples, see tests/tests.py.
 
 ## Note on random path generation
 The procedure for random path generation in this script differs from 
@@ -93,4 +181,5 @@ SciPy 1.0: Fundamental algorithms for scientific computing in Python.
 ## Acknowledgements
 I thank the following colleagues for the feedback and suggestions while 
 developping the original script: P. Dionigi, D. Garlaschelli, W.Th.F. 
-den Hollander, Q.P.J. Bourgeois. All remaining errors are my own.
+den Hollander, Q.P.J. Bourgeois, M. Hinz. All remaining errors are my 
+own.
