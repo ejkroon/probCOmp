@@ -1,0 +1,50 @@
+Name;tolerance
+Wet clay;W
+Coiling;W
+Slab-building;W
+Modelling;W
+Molding;W
+Hammering_W;W
+Wheel throwing_RO;W
+Drying to leather-hard;W
+Scraping;W
+Pressure;W
+Beating;W
+Pushing;L
+Shaving;L
+Paddling;L
+Hammering_LH;L
+Wheel throwing_P;W
+Trimming;L
+Application separate element;W;L
+Wet smoothing;W
+Brushing;L
+Leather hard smoothing;L
+Drying to dry;L
+Softening;L;D
+Burnishing;L;D
+Shining;L;D
+Clay coating;W;L
+Organic coating;D;F
+Graphite coating;F
+Silica coating;D;F
+Smudging;F
+Painting;D;F
+Simple impression;W
+Tilted impression;W
+Rolled impression;W
+Stamped impression;W
+Paddled impression;L
+Simple incision;W;L;D
+Pivoting incision;W;L;D
+Decorative scraping;W;L;D
+Engraving;F
+Excisions;W;L
+Incrustation;L;D;F
+Application;W;L
+Decorative modelling;W
+Open firing;D
+Enclosed firing;D
+Direct flame kilns;D
+Indirect flame kilns;D
+Radiant heat kilns;D

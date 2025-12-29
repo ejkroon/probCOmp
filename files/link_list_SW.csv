@@ -1,0 +1,575 @@
+Source;Target;Weight
+Wet clay;Coiling;39
+Wet clay;Slab-building;0
+Wet clay;Modelling;61
+Wet clay;Molding;0
+Wet clay;Hammering_W;0
+Wet clay;Wheel throwing_RO;0
+Coiling;Slab-building;0
+Coiling;Modelling;0
+Coiling;Molding;0
+Coiling;Hammering_W;0
+Coiling;Wheel throwing_RO;0
+Coiling;Drying to leather-hard;0
+Coiling;Scraping;0
+Coiling;Pressure;100
+Coiling;Beating;0
+Coiling;Wheel throwing_P;0
+Slab-building;Coiling;0
+Slab-building;Modelling;0
+Slab-building;Molding;0
+Slab-building;Hammering_W;0
+Slab-building;Wheel throwing_RO;0
+Slab-building;Drying to leather-hard;0
+Slab-building;Scraping;0
+Slab-building;Pressure;0
+Slab-building;Beating;0
+Modelling;Coiling;61
+Modelling;Slab-building;0
+Modelling;Molding;0
+Modelling;Hammering_W;0
+Modelling;Wheel throwing_RO;0
+Modelling;Drying to leather-hard;0
+Modelling;Scraping;0
+Modelling;Pressure;0
+Modelling;Beating;0
+Molding;Coiling;0
+Molding;Slab-building;0
+Molding;Modelling;0
+Molding;Hammering_W;0
+Molding;Wheel throwing_RO;0
+Molding;Drying to leather-hard;0
+Molding;Scraping;0
+Molding;Pressure;0
+Molding;Beating;0
+Molding;Wheel throwing_P;0
+Hammering_W;Coiling;0
+Hammering_W;Slab-building;0
+Hammering_W;Modelling;0
+Hammering_W;Molding;0
+Hammering_W;Wheel throwing_RO;0
+Hammering_W;Drying to leather-hard;0
+Hammering_W;Scraping;0
+Hammering_W;Pressure;0
+Hammering_W;Beating;0
+Wheel throwing_RO;Coiling;0
+Wheel throwing_RO;Slab-building;0
+Wheel throwing_RO;Modelling;0
+Wheel throwing_RO;Molding;0
+Wheel throwing_RO;Hammering_W;0
+Wheel throwing_RO;Drying to leather-hard;0
+Wheel throwing_RO;Scraping;0
+Wheel throwing_RO;Pressure;0
+Wheel throwing_RO;Beating;0
+Wheel throwing_RO;Wheel throwing_P;0
+Drying to leather-hard;Pushing;0
+Drying to leather-hard;Shaving;0
+Drying to leather-hard;Paddling;0
+Drying to leather-hard;Hammering_LH;0
+Drying to leather-hard;Trimming;0
+Drying to leather-hard;Application separate element;0
+Drying to leather-hard;Brushing;0
+Drying to leather-hard;Leather hard smoothing;0
+Drying to leather-hard;Drying to dry;81
+Drying to leather-hard;Softening;0
+Drying to leather-hard;Burnishing;19
+Drying to leather-hard;Shining;0
+Drying to leather-hard;Clay coating;0
+Drying to leather-hard;Paddled impression;0
+Drying to leather-hard;Simple incision;0
+Drying to leather-hard;Pivoting incision;0
+Drying to leather-hard;Decorative scraping;0
+Drying to leather-hard;Excisions;0
+Drying to leather-hard;Incrustation;0
+Drying to leather-hard;Application;0
+Scraping;Drying to leather-hard;0
+Scraping;Pressure;0
+Scraping;Beating;0
+Scraping;Wheel throwing_P;0
+Scraping;Application separate element;0
+Scraping;Wet smoothing;7
+Pressure;Drying to leather-hard;0
+Pressure;Scraping;7
+Pressure;Beating;0
+Pressure;Wheel throwing_P;0
+Pressure;Application separate element;1
+Pressure;Wet smoothing;92
+Beating;Drying to leather-hard;0
+Beating;Scraping;0
+Beating;Pressure;0
+Beating;Wheel throwing_P;0
+Beating;Application separate element;0
+Beating;Wet smoothing;0
+Pushing;Shaving;0
+Pushing;Paddling;0
+Pushing;Hammering_LH;0
+Pushing;Trimming;0
+Pushing;Application separate element;0
+Pushing;Brushing;0
+Pushing;Leather hard smoothing;0
+Shaving;Pushing;0
+Shaving;Paddling;0
+Shaving;Hammering_LH;0
+Shaving;Trimming;0
+Shaving;Application separate element;0
+Shaving;Brushing;0
+Shaving;Leather hard smoothing;0
+Paddling;Pushing;0
+Paddling;Shaving;0
+Paddling;Hammering_LH;0
+Paddling;Trimming;0
+Paddling;Application separate element;0
+Paddling;Brushing;0
+Paddling;Leather hard smoothing;0
+Hammering_LH;Pushing;0
+Hammering_LH;Shaving;0
+Hammering_LH;Paddling;0
+Hammering_LH;Trimming;0
+Hammering_LH;Application separate element;0
+Hammering_LH;Brushing;0
+Hammering_LH;Leather hard smoothing;0
+Wheel throwing_P;Drying to leather-hard;0
+Wheel throwing_P;Scraping;0
+Wheel throwing_P;Pressure;0
+Wheel throwing_P;Beating;0
+Wheel throwing_P;Trimming;0
+Wheel throwing_P;Application separate element;0
+Wheel throwing_P;Wet smoothing;0
+Trimming;Pushing;0
+Trimming;Shaving;0
+Trimming;Paddling;0
+Trimming;Hammering_LH;0
+Trimming;Application separate element;0
+Trimming;Brushing;0
+Trimming;Leather hard smoothing;0
+Application separate element;Drying to leather-hard;0
+Application separate element;Wet smoothing;1
+Application separate element;Brushing;0
+Application separate element;Leather hard smoothing;0
+Application separate element;Scraping;0
+Wet smoothing;Drying to leather-hard;31
+Wet smoothing;Clay coating;0
+Wet smoothing;Simple impression;8
+Wet smoothing;Tilted impression;0
+Wet smoothing;Rolled impression;0
+Wet smoothing;Stamped impression;0
+Wet smoothing;Simple incision;6
+Wet smoothing;Pivoting incision;0
+Wet smoothing;Decorative scraping;0
+Wet smoothing;Excisions;50
+Wet smoothing;Application;0
+Wet smoothing;Decorative modelling;5
+Brushing;Leather hard smoothing;0
+Brushing;Drying to dry;0
+Brushing;Softening;0
+Brushing;Burnishing;0
+Brushing;Shining;0
+Brushing;Clay coating;0
+Brushing;Paddled impression;0
+Brushing;Simple incision;0
+Brushing;Pivoting incision;0
+Brushing;Decorative scraping;0
+Brushing;Excisions;0
+Brushing;Application;0
+Leather hard smoothing;Brushing;0
+Leather hard smoothing;Drying to dry;0
+Leather hard smoothing;Softening;0
+Leather hard smoothing;Burnishing;0
+Leather hard smoothing;Shining;0
+Leather hard smoothing;Clay coating;0
+Leather hard smoothing;Paddled impression;0
+Leather hard smoothing;Simple incision;0
+Leather hard smoothing;Pivoting incision;0
+Leather hard smoothing;Decorative scraping;0
+Leather hard smoothing;Excisions;0
+Leather hard smoothing;Application;0
+Drying to dry;Softening;0
+Drying to dry;Burnishing;0
+Drying to dry;Shining;0
+Drying to dry;Organic coating;0
+Drying to dry;Graphite coating;0
+Drying to dry;Silica coating;0
+Drying to dry;Painting;0
+Drying to dry;Simple incision;0
+Drying to dry;Pivoting incision;0
+Drying to dry;Decorative scraping;0
+Drying to dry;Incrustation;0
+Drying to dry;Open firing;100
+Drying to dry;Enclosed firing;0
+Drying to dry;Direct flame kilns;0
+Drying to dry;Indirect flame kilns;0
+Drying to dry;Radiant heat kilns;0
+Softening;Drying to dry;0
+Softening;Burnishing;0
+Softening;Shining;0
+Softening;Clay coating;0
+Softening;Organic coating;0
+Softening;Graphite coating;0
+Softening;Silica coating;0
+Softening;Painting;0
+Softening;Paddled impression;0
+Softening;Simple incision;0
+Softening;Pivoting incision;0
+Softening;Decorative scraping;0
+Softening;Excisions;0
+Softening;Incrustation;0
+Softening;Application;0
+Softening;Open firing;0
+Softening;Enclosed firing;0
+Softening;Direct flame kilns;0
+Softening;Indirect flame kilns;0
+Softening;Radiant heat kilns;0
+Burnishing;Drying to dry;19
+Burnishing;Softening;0
+Burnishing;Shining;0
+Burnishing;Clay coating;0
+Burnishing;Organic coating;0
+Burnishing;Graphite coating;0
+Burnishing;Silica coating;0
+Burnishing;Painting;0
+Burnishing;Paddled impression;0
+Burnishing;Simple incision;0
+Burnishing;Pivoting incision;0
+Burnishing;Decorative scraping;0
+Burnishing;Excisions;0
+Burnishing;Incrustation;0
+Burnishing;Application;0
+Burnishing;Open firing;0
+Burnishing;Enclosed firing;0
+Burnishing;Direct flame kilns;0
+Burnishing;Indirect flame kilns;0
+Burnishing;Radiant heat kilns;0
+Shining;Drying to dry;0
+Shining;Softening;0
+Shining;Burnishing;0
+Shining;Clay coating;0
+Shining;Organic coating;0
+Shining;Graphite coating;0
+Shining;Silica coating;0
+Shining;Painting;0
+Shining;Paddled impression;0
+Shining;Simple incision;0
+Shining;Pivoting incision;0
+Shining;Decorative scraping;0
+Shining;Excisions;0
+Shining;Incrustation;0
+Shining;Application;0
+Shining;Open firing;0
+Shining;Enclosed firing;0
+Shining;Direct flame kilns;0
+Shining;Indirect flame kilns;0
+Shining;Radiant heat kilns;0
+Clay coating;Drying to leather-hard;0
+Clay coating;Drying to dry;0
+Clay coating;Softening;0
+Clay coating;Burnishing;0
+Clay coating;Shining;0
+Clay coating;Simple impression;0
+Clay coating;Tilted impression;0
+Clay coating;Rolled impression;0
+Clay coating;Stamped impression;0
+Clay coating;Paddled impression;0
+Clay coating;Simple incision;0
+Clay coating;Pivoting incision;0
+Clay coating;Decorative scraping;0
+Clay coating;Excisions;0
+Clay coating;Incrustation;0
+Clay coating;Application;0
+Organic coating;Softening;0
+Organic coating;Burnishing;0
+Organic coating;Shining;0
+Organic coating;Graphite coating;0
+Organic coating;Silica coating;0
+Organic coating;Smudging;0
+Organic coating;Painting;0
+Organic coating;Simple incision;0
+Organic coating;Pivoting incision;0
+Organic coating;Decorative scraping;0
+Organic coating;Engraving;0
+Organic coating;Incrustation;0
+Organic coating;Open firing;0
+Organic coating;Enclosed firing;0
+Organic coating;Direct flame kilns;0
+Organic coating;Indirect flame kilns;0
+Organic coating;Radiant heat kilns;0
+Graphite coating;Softening;0
+Graphite coating;Burnishing;0
+Graphite coating;Shining;0
+Graphite coating;Organic coating;0
+Graphite coating;Silica coating;0
+Graphite coating;Smudging;0
+Graphite coating;Painting;0
+Graphite coating;Simple incision;0
+Graphite coating;Pivoting incision;0
+Graphite coating;Decorative scraping;0
+Graphite coating;Incrustation;0
+Graphite coating;Open firing;0
+Graphite coating;Enclosed firing;0
+Graphite coating;Direct flame kilns;0
+Graphite coating;Indirect flame kilns;0
+Graphite coating;Radiant heat kilns;0
+Silica coating;Softening;0
+Silica coating;Burnishing;0
+Silica coating;Shining;0
+Silica coating;Organic coating;0
+Silica coating;Graphite coating;0
+Silica coating;Smudging;0
+Silica coating;Painting;0
+Silica coating;Simple incision;0
+Silica coating;Pivoting incision;0
+Silica coating;Decorative scraping;0
+Silica coating;Engraving;0
+Silica coating;Incrustation;0
+Silica coating;Open firing;0
+Silica coating;Enclosed firing;0
+Silica coating;Direct flame kilns;0
+Silica coating;Indirect flame kilns;0
+Silica coating;Radiant heat kilns;0
+Smudging;Organic coating;0
+Smudging;Graphite coating;0
+Smudging;Silica coating;0
+Smudging;Painting;0
+Smudging;Simple incision;0
+Smudging;Pivoting incision;0
+Smudging;Decorative scraping;0
+Smudging;Engraving;0
+Smudging;Incrustation;0
+Smudging;Open firing;0
+Smudging;Enclosed firing;0
+Smudging;Direct flame kilns;0
+Smudging;Indirect flame kilns;0
+Smudging;Radiant heat kilns;0
+Painting;Softening;0
+Painting;Burnishing;0
+Painting;Shining;0
+Painting;Organic coating;0
+Painting;Graphite coating;0
+Painting;Silica coating;0
+Painting;Smudging;0
+Painting;Simple incision;0
+Painting;Pivoting incision;0
+Painting;Decorative scraping;0
+Painting;Engraving;0
+Painting;Excisions;0
+Painting;Incrustation;0
+Painting;Open firing;0
+Painting;Enclosed firing;0
+Painting;Direct flame kilns;0
+Painting;Indirect flame kilns;0
+Painting;Radiant heat kilns;0
+Simple impression;Drying to leather-hard;9
+Simple impression;Clay coating;0
+Simple impression;Tilted impression;0
+Simple impression;Rolled impression;0
+Simple impression;Stamped impression;0
+Simple impression;Simple incision;0
+Simple impression;Pivoting incision;0
+Simple impression;Decorative scraping;0
+Simple impression;Excisions;1
+Simple impression;Application;0
+Simple impression;Decorative modelling;0
+Tilted impression;Drying to leather-hard;0
+Tilted impression;Clay coating;0
+Tilted impression;Simple impression;0
+Tilted impression;Rolled impression;0
+Tilted impression;Stamped impression;0
+Tilted impression;Simple incision;0
+Tilted impression;Pivoting incision;0
+Tilted impression;Decorative scraping;0
+Tilted impression;Excisions;0
+Tilted impression;Application;0
+Tilted impression;Decorative modelling;0
+Rolled impression;Drying to leather-hard;0
+Rolled impression;Clay coating;0
+Rolled impression;Simple impression;0
+Rolled impression;Tilted impression;0
+Rolled impression;Stamped impression;0
+Rolled impression;Simple incision;0
+Rolled impression;Pivoting incision;0
+Rolled impression;Decorative scraping;0
+Rolled impression;Excisions;0
+Rolled impression;Application;0
+Rolled impression;Decorative modelling;0
+Stamped impression;Drying to leather-hard;0
+Stamped impression;Clay coating;0
+Stamped impression;Simple impression;0
+Stamped impression;Tilted impression;0
+Stamped impression;Rolled impression;0
+Stamped impression;Simple incision;0
+Stamped impression;Pivoting incision;0
+Stamped impression;Decorative scraping;0
+Stamped impression;Excisions;0
+Stamped impression;Application;0
+Stamped impression;Decorative modelling;0
+Paddled impression;Drying to dry;0
+Paddled impression;Softening;0
+Paddled impression;Burnishing;0
+Paddled impression;Shining;0
+Paddled impression;Clay coating;0
+Paddled impression;Simple incision;0
+Paddled impression;Pivoting incision;0
+Paddled impression;Decorative scraping;0
+Paddled impression;Excisions;0
+Paddled impression;Incrustation;0
+Paddled impression;Application;0
+Simple incision;Drying to leather-hard;4
+Simple incision;Drying to dry;0
+Simple incision;Softening;0
+Simple incision;Burnishing;0
+Simple incision;Shining;0
+Simple incision;Clay coating;0
+Simple incision;Organic coating;0
+Simple incision;Graphite coating;0
+Simple incision;Silica coating;0
+Simple incision;Painting;0
+Simple incision;Simple impression;2
+Simple incision;Tilted impression;0
+Simple incision;Rolled impression;0
+Simple incision;Stamped impression;0
+Simple incision;Paddled impression;0
+Simple incision;Pivoting incision;0
+Simple incision;Decorative scraping;0
+Simple incision;Excisions;0
+Simple incision;Incrustation;0
+Simple incision;Application;0
+Simple incision;Decorative modelling;0
+Pivoting incision;Drying to leather-hard;0
+Pivoting incision;Drying to dry;0
+Pivoting incision;Softening;0
+Pivoting incision;Burnishing;0
+Pivoting incision;Shining;0
+Pivoting incision;Clay coating;0
+Pivoting incision;Organic coating;0
+Pivoting incision;Graphite coating;0
+Pivoting incision;Silica coating;0
+Pivoting incision;Painting;0
+Pivoting incision;Simple impression;0
+Pivoting incision;Tilted impression;0
+Pivoting incision;Rolled impression;0
+Pivoting incision;Stamped impression;0
+Pivoting incision;Paddled impression;0
+Pivoting incision;Simple incision;0
+Pivoting incision;Decorative scraping;0
+Pivoting incision;Excisions;0
+Pivoting incision;Incrustation;0
+Pivoting incision;Application;0
+Pivoting incision;Decorative modelling;0
+Decorative scraping;Drying to leather-hard;0
+Decorative scraping;Drying to dry;0
+Decorative scraping;Softening;0
+Decorative scraping;Burnishing;0
+Decorative scraping;Shining;0
+Decorative scraping;Clay coating;0
+Decorative scraping;Organic coating;0
+Decorative scraping;Graphite coating;0
+Decorative scraping;Silica coating;0
+Decorative scraping;Painting;0
+Decorative scraping;Simple impression;0
+Decorative scraping;Tilted impression;0
+Decorative scraping;Rolled impression;0
+Decorative scraping;Stamped impression;0
+Decorative scraping;Paddled impression;0
+Decorative scraping;Simple incision;0
+Decorative scraping;Pivoting incision;0
+Decorative scraping;Excisions;0
+Decorative scraping;Incrustation;0
+Decorative scraping;Application;0
+Decorative scraping;Decorative modelling;0
+Engraving;Organic coating;0
+Engraving;Silica coating;0
+Engraving;Smudging;0
+Engraving;Painting;0
+Engraving;Incrustation;0
+Engraving;Open firing;0
+Engraving;Enclosed firing;0
+Engraving;Direct flame kilns;0
+Engraving;Indirect flame kilns;0
+Engraving;Radiant heat kilns;0
+Excisions;Drying to leather-hard;51
+Excisions;Drying to dry;0
+Excisions;Softening;0
+Excisions;Burnishing;0
+Excisions;Shining;0
+Excisions;Clay coating;0
+Excisions;Painting;0
+Excisions;Simple impression;0
+Excisions;Tilted impression;0
+Excisions;Rolled impression;0
+Excisions;Stamped impression;0
+Excisions;Paddled impression;0
+Excisions;Simple incision;0
+Excisions;Pivoting incision;0
+Excisions;Decorative scraping;0
+Excisions;Incrustation;0
+Excisions;Application;0
+Excisions;Decorative modelling;0
+Incrustation;Drying to dry;0
+Incrustation;Softening;0
+Incrustation;Burnishing;0
+Incrustation;Shining;0
+Incrustation;Organic coating;0
+Incrustation;Graphite coating;0
+Incrustation;Silica coating;0
+Incrustation;Smudging;0
+Incrustation;Open firing;0
+Incrustation;Enclosed firing;0
+Incrustation;Direct flame kilns;0
+Incrustation;Indirect flame kilns;0
+Incrustation;Radiant heat kilns;0
+Application;Drying to leather-hard;0
+Application;Drying to dry;0
+Application;Softening;0
+Application;Burnishing;0
+Application;Shining;0
+Application;Clay coating;0
+Application;Simple impression;0
+Application;Tilted impression;0
+Application;Rolled impression;0
+Application;Stamped impression;0
+Application;Paddled impression;0
+Application;Simple incision;0
+Application;Pivoting incision;0
+Application;Decorative scraping;0
+Application;Excisions;0
+Application;Decorative modelling;0
+Decorative modelling;Drying to leather-hard;5
+Decorative modelling;Clay coating;0
+Decorative modelling;Simple impression;0
+Decorative modelling;Tilted impression;0
+Decorative modelling;Rolled impression;0
+Decorative modelling;Stamped impression;0
+Decorative modelling;Simple incision;0
+Decorative modelling;Pivoting incision;0
+Decorative modelling;Decorative scraping;0
+Decorative modelling;Excisions;0
+Decorative modelling;Application;0
+Open firing;Organic coating;0
+Open firing;Silica coating;0
+Open firing;Smudging;0
+Open firing;Painting;0
+Open firing;Engraving;0
+Open firing;Incrustation;0
+Enclosed firing;Organic coating;0
+Enclosed firing;Silica coating;0
+Enclosed firing;Smudging;0
+Enclosed firing;Painting;0
+Enclosed firing;Engraving;0
+Enclosed firing;Incrustation;0
+Direct flame kilns;Organic coating;0
+Direct flame kilns;Silica coating;0
+Direct flame kilns;Smudging;0
+Direct flame kilns;Painting;0
+Direct flame kilns;Engraving;0
+Direct flame kilns;Incrustation;0
+Indirect flame kilns;Organic coating;0
+Indirect flame kilns;Silica coating;0
+Indirect flame kilns;Smudging;0
+Indirect flame kilns;Painting;0
+Indirect flame kilns;Engraving;0
+Indirect flame kilns;Incrustation;0
+Radiant heat kilns;Organic coating;0
+Radiant heat kilns;Silica coating;0
+Radiant heat kilns;Smudging;0
+Radiant heat kilns;Painting;0
+Radiant heat kilns;Engraving;0
+Radiant heat kilns;Incrustation;0
