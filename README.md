@@ -10,23 +10,22 @@ For complete examples, see tests/tests.py
 Start by making a network representation of the total ceramic chaîne 
 opératoire. 
 
-'''python
-#Assumes nodes_list and links_list are loaded by the user
+```python
 nodes = nodes_list
 links = links_list
 G = load_network(nodes, links)
-'''
+```
 
 You can then load data into this graph. Empirical data usually consists 
 of paths:
 
-'''python
-#Assumes dataset is loaded by user
+```python
 empirical_paths = dataset
-G' = load_paths_to_graph(G, empirical_paths)
-'''
-
-
+G = load_paths_to_graph(G, empirical_paths)
+```
+```python
+print("Hello, World!")
+```
 
 ## Note on random path generation
 The procedure for random path generation in this script differs from 
