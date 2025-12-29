@@ -67,6 +67,7 @@ outcome = compare_assemblages(FBW4, FBW3)
 control = compare_assemblages(FBW4, random_control)
 
 print(f'Outcomes: FBW4-FBW3 = {outcome}, FBW4-control = {control}.')
+#Returns "Outcomes: FBW4-FBW3 = 0.39, FBW4-control = 3.529."
 
 """
 ------------------------------------------------------------------------
@@ -178,5 +179,4 @@ message = f'Wasserstein distance between FBW4 and CW: {score}. '
 message += f'This score is in the {percentile}th percentile of '
 message += 'Wasserstein distances to the control group.'
 print(message)
-
-
+#Returns "Outcomes: Wd (FBW4, CW) ca. 0.388, percentile < 5.0."
