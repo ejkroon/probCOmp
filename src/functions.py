@@ -215,6 +215,9 @@ def check_paths(G:nx.DiGraph, paths:list[list[str]]):
         #Check if path respects syntax
         virtual_state = 'W'
         for node in path:
+            if node not in list(G.nodes):
+                error_list.append(f'path {idx} {node} absent in graph')
+
             if virtual_state not in G.nodes[node]['tolerance']:
                 error_list.append(f'path {idx} {node} appears out of syntax')
 
@@ -409,6 +412,8 @@ def permutation_test(
         The Wasserstein distance between the empirical sets of paths (Wd a,b).
     percentile : float
         The percentile of Wd a,b relative to the ensemble of control groups.
+    control_scores : list
+        List of the Wd a,c for all control groups
     """
 
     #Obtain weighted link lists and calculate Wasserstein distance
@@ -417,14 +422,17 @@ def permutation_test(
     score = compare_assemblages(a, b)
 
     #Generate control groups
-    control_groups = []
+    control_scores = []
     for n in range(0, n_control):
-        control_group = generate_random_paths(C, control_size, termination_chance)
-        control_groups.append(
+        control_group = generate_random_paths(
+            C, control_size, 
+            termination_chance
+            )
+        control_scores.append(
             compare_assemblages(a, load_paths_to_graph(G, control_group))
             )
 
     #Calculate percentile of Wd a,b relative to Wd a,c
     percentile = percentileofscore(control_groups, score, 'weak')
 
-    return score, percentile
+    return score, percentile, control_scores
