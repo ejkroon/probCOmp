@@ -10,14 +10,7 @@ def check_target_node(G, path, target):
 
     The function checks 1) whether the technique be performed in the 
     present path state; 2) whether performing the technique would cause 
-    a loop; and 3) whether there is a chance of selecting the technique.  
-
-    Note: in Kroon (2024) the random path generator eliminated a path 
-    if a loop occurred, which selected against longer paths (the longer, 
-    the greater the odds of a loop) and was less efficient. By 
-    eliminating the possibility of a loop with this check, the script is 
-    more efficient but also returns longer paths on average. Average 
-    path length increases by ca. 7 steps relative to the older version. 
+    a loop; and 3) whether there is a chance of selecting the technique. 
 
     Paramaters
     ----------
@@ -116,7 +109,10 @@ def generate_random_paths(
             if path[0] == 'F':
                 if choices(
                             [0,1], 
-                            weights = [termination_chance, 1-termination_chance], 
+                            weights = [
+                                termination_chance, 
+                                1-termination_chance
+                                ], 
                             k=1
                         )[0] == 0:
                     generated_paths.append(path[1:])
@@ -160,7 +156,9 @@ def load_network(nodes, links):
     #Create dictionairy for node attributes
     node_tolerance_dict={}
     for node in nodes:
-        node_tolerance_dict[node[0]] = [value for value in node[1:] if value != '']
+        node_tolerance_dict[node[0]] = [
+            value for value in node[1:] if value != ''
+            ]
 
     #Create graph object from data
     G = nx.DiGraph()
@@ -172,7 +170,8 @@ def load_network(nodes, links):
     return G
 
 def check_paths(G, paths):
-    """Function to check whether the paths in a dataset are formatted correctly.
+    """Function to check whether the paths in a dataset are formatted 
+    correctly.
 
     Paramaters
     ----------
@@ -315,69 +314,10 @@ def compare_assemblages(a, b):
 
     return outcome
 
-def extract_paths(path_to_file):
-    """Helper function to extract paths from .csv files.
-
-    Parameters
-    ----------
-    path_to_file : str
-        String specifying the location of the paths to extract.
-
-    Returns
-    -------
-    paths : list of lists
-        List of paths, each formatted as a list of nodes.
-    """
-
-    #Open file and extract paths
-    with open(path_to_file, 'r', encoding='utf-8') as df:
-        reader = csv.reader(df, delimiter=';')
-        apaths = [l for l in reader]
-
-    #Delete empty cells
-    paths = []
-    for path in apaths:
-        paths.append([node for node in path if node != ''])
-
-    return paths
-
-def extract_link_list(path_to_file, weight_type):
-    """ Helper function to extract a link list from a csv file.
-
-    Parameters
-    ----------
-    path_to_file : str
-        String specifying the location of the paths to extract.
-    weight_type : str
-        Parameter specifying the type of weight. 'int' for integers, and 'float' 
-        for decimal numbers.
-
-    Returns
-    -------
-    link_list : list of lists
-        List of links formatted as [source, target, weight].
-    """
-
-    #Open and read file with links
-    with open(path_to_file, 'r', encoding='utf-8') as fl:
-        reader = csv.reader(fl, delimiter=';')
-        link_list = [l for l in reader][1:]
-
-    #Convert weights
-    for link in link_list:
-        if weight_type == 'int':
-            link.append(int(link[2]))
-        elif weight_type == 'float':
-            link.append(float(link[2]))
-        del link[2]
-
-    return link_list
-
 def generate_control_from_link_list(
                                     G, 
-                                    file_path, 
+                                    links, 
                                     nodes, 
-                                    weight_type, 
                                     n_paths, 
                                     termination_chance
                                 ):
@@ -391,15 +331,13 @@ def generate_control_from_link_list(
     ----------
     G : networkx DiGraph object
         Network representing the total chaîne opératoire for ceramics
-    file_path : str
-        Path to file with a link list.
+    links : list of lists
+        List of weighted links for path generation, formatted as [source, 
+        target, weight].
     nodes : list of lists
-        List of nodes and their tolerance, formatted as [node_ID, tolerances]
-    weight_type : str
-        Parameter specifying the type of weight. 'int' for integers, and 'float' 
-        for decimal numbers.
+        List of nodes and their tolerance, formatted as [node_ID, tolerances].
     n_paths : int
-        Number of paths to generate
+        Number of paths to generate (positive integer).
     termination_chance : float
         Chance a path terminates after the firing process or each step 
         following the firing process. Interval [0,1].
@@ -412,8 +350,7 @@ def generate_control_from_link_list(
         paths.
     """
     
-    #Extract link list, generate paths with it, and summarise paths as link list
-    links = extract_link_list(file_path, weight_type)
+    #Generate paths from link list
     H = load_network(nodes, links)
     paths = generate_random_paths(H, n_paths, termination_chance)
     if check_paths(G, paths) == True:
@@ -477,7 +414,9 @@ def permutation_test(
     control_groups = []
     for n in range(0, n_control):
         control_group = generate_random_paths(C, control_size, termination_chance)
-        control_groups.append(compare_assemblages(a, load_paths_to_graph(G, control_group)))
+        control_groups.append(
+            compare_assemblages(a, load_paths_to_graph(G, control_group))
+            )
 
     #Calculate percentile of Wd a,b relative to Wd a,c
     percentile = percentileofscore(control_groups, score, 'weak')

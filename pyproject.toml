@@ -1,11 +1,10 @@
 [project]
 name = "probCOmp"
-version = 0.0.1
+dynamic = ["version"]
 authors = [
-    {name = ejkroon}
+    {name = "ejkroon"},
 ]
-description = "Probabilistic method to compare ceramic chaînes 
-opératoires."
+description = "Probabilistic comparison of ceramic chaînes opératoires."
 readme = "README.md"
 requires-python = ">=3.12.4"
 classifiers = [
@@ -13,7 +12,7 @@ classifiers = [
     "Operating System :: Microsoft :: Windows :: Windows 11",
 ]
 license = "MIT"
-license-file = "LICENSE"
+license-files = ["LICENSE"]
 
-[project.url]
-Homepage = https://github.com/ejkroon/probCOmp
+[project.urls]
+Homepage = "https://github.com/ejkroon/probCOmp"
