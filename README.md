@@ -2,8 +2,30 @@
 Probabilistic method to compare ceramic chaînes opératoires.
 
 ## Introduction
+This application uses the 
 
 ## How to use
+For complete examples, see tests/tests.py
+
+Start by making a network representation of the total ceramic chaîne 
+opératoire. 
+
+'''python
+#Assumes nodes_list and links_list are loaded by the user
+nodes = nodes_list
+links = links_list
+G = load_network(nodes, links)
+'''
+
+You can then load data into this graph. Empirical data usually consists 
+of paths:
+
+'''python
+#Assumes dataset is loaded by user
+empirical_paths = dataset
+G' = load_paths_to_graph(G, empirical_paths)
+'''
+
 
 
 ## Note on random path generation
@@ -32,15 +54,15 @@ Hagberg, A.A., D.A. Schult, and P.J. Swart, 2008. Exploring network
 structure, dynamics, and function using NetworkX”. In: G. Varoquaux, T. 
 Vaught, and J. Millman (eds). *Proceedings of the 7th Python in Science* 
 *Conference (SciPy2008)*. Pasadena (CA): SciPy (SciPy Proceedings 11), 
-pp. 11–15. DOI: [text](https://doi.org/10.25080/TCWV9851)
+pp. 11–15. DOI: [10.25080/TCWV9851](https://doi.org/10.25080/TCWV9851)
 
 Kroon, E.J., 2024. *Serial Learners: Interactions between Funnel Beaker* 
 *West and Corded Ware Communities in the Netherlands during the Third* 
 *Millennium BCE from the Perspective of Ceramic Technology*. Leiden: 
-Sidestone Press. DOI: [text](https://doi.org/10.59641/4e367hq)
+Sidestone Press. DOI: [10.59641/4e367hq](https://doi.org/10.59641/4e367hq)
 
 Roux, V., 2019. *Ceramics and Society*. Cham: Springer International 
-Publishing. DOI: [text](https://doi.org/10.1007/978-3-030-03973-8)
+Publishing. DOI: [10.1007/978-3-030-03973-8](https://doi.org/10.1007/978-3-030-03973-8)
 
 Virtanen, P., R. Gommers, T. E. Oliphant, M. Haberland, T. Reddy, D. 
 Cournapeau, E. Burovski, P. Peterson, W. Weckesser, J. Bright, S. J. 
@@ -51,7 +73,7 @@ Henriksen, E. A. Quintero, C. R. Harris, A. M. Archibald, A. H.
 Ribeiro, F. Pedregosa, P. van Mulbregt, SciPy 1.0 Contributors, (2020). 
 SciPy 1.0: Fundamental algorithms for scientific computing in Python. 
 *Nature Methods*, 17(3), 261-272. DOI: 
-[text](https://doi.org/10.1038/s41592-019-0686-2)
+[10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)
 
 ## Acknowledgements
 I thank the following colleagues for the feedback and suggestions while 
