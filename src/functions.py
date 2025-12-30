@@ -367,7 +367,7 @@ def generate_control_from_link_list(
 
     return link_list
 
-def permutation_test2(
+def permutation_test(
                         G:nx.DiGraph, 
                         a_paths:list[list[str]], 
                         b_paths:list[list[str]], 
