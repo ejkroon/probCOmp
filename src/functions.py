@@ -3,6 +3,7 @@ import csv
 from random import choices
 from scipy.stats import wasserstein_distance
 from scipy.stats import percentileofscore
+from collections import namedtuple
 
 def check_target_node(G:nx.DiGraph, path:list[str], target:str):
     """Function to check whether target node could be appended to a 
@@ -434,4 +435,8 @@ def permutation_test(
 
     #Calculate percentile of Wd a,b relative to Wd a,c
     percentile = percentileofscore(control_scores, score, 'weak')
-    return score, percentile, control_scores
+    outcomes = namedtuple(
+        "outcomes", 
+        ["score", "percentile", "control_scores"]
+        )
+    return outcomes(score, percentile, control_scores)
