@@ -434,5 +434,5 @@ def permutation_test(
 
     #Calculate percentile of Wd a,b relative to Wd a,c
     percentile = percentileofscore(control_scores, score, 'weak')
-
+    print(control_scores)
     return score, percentile, control_scores
