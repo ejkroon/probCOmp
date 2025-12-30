@@ -165,7 +165,8 @@ C = load_network(
     )
 
 #Step 4: Perform a permutation test
-score, percentile, control_scores = permutation_test(
+#score, percentile, control_scores = permutation_test(
+print(permutation_test(
     G=G, 
     a_paths = FBW4, 
     b_paths = CW, 
@@ -173,11 +174,11 @@ score, percentile, control_scores = permutation_test(
     control_size = 100, 
     n_control = 1000,
     termination_chance = 1.0
-    )
+    ))
 
-print(control_scores)
-message = f'Wasserstein distance between FBW4 and CW: {score}. '
-message += f'This score is in the {percentile}th percentile of '
-message += 'Wasserstein distances to the control group.'
-print(message)
-#Returns "Outcomes: Wd (FBW4, CW) ca. 0.388, percentile < 5.0."
+#print(control_scores)
+#message = f'Wasserstein distance between FBW4 and CW: {score}. '
+#message += f'This score is in the {percentile}th percentile of '
+#message += 'Wasserstein distances to the control group.'
+#print(message)
+#Returns "Outcomes: Wd (FBW4, CW) ca. 0.39, percentile < 5.0."
