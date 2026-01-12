@@ -181,3 +181,39 @@ message += f'This score is in the {percentile}th percentile of '
 message += 'Wasserstein distances to the control group.'
 print(message)
 #Returns "Outcomes: Wd (FBW4, CW) ca. 0.39, percentile < 5.0."
+
+#We can also inspect the odds of a path occuring at random in a graph.
+
+#Step 1 Load a graph with uniform edge weights
+with open('files/nodes_list.csv', 'r', encoding='utf-8') as fn:
+    reader = csv.reader(fn, delimiter = ';')
+    nodes = [n for n in reader][1:]
+
+with open('files/link_list_uniform.csv', 'r', encoding='utf-8') as fl:
+    reader = csv.reader(fl, delimiter = ';')
+    uniform_links = [n for n in reader][1:]
+
+for link in uniform_links:
+    link.append(int(link[2]))
+    del link[2]
+
+G = load_network(nodes, uniform_links)
+
+#Step 2: Create a subgraph for a ceramic assemblage
+with open('files/FBW_4mil.csv', 'r', encoding='utf-8') as df1:
+    reader = csv.reader(df1, delimiter=';')
+    FBW4_paths = [l for l in reader]
+
+if check_paths(G, FBW4_paths) == True:
+    FBW4 = load_paths_to_graph(G, FBW4_paths)
+    FB4 = load_network(nodes, FBW4)
+
+#Step 3: Load the second assemblage and calculate odds
+with open('files/FBW_3mil.csv', 'r', encoding='utf-8') as df2:
+    reader = csv.reader(df2, delimiter=';')
+    FBW3_paths = [l for l in reader]
+
+if check_paths(G, FBW3_paths) == True:
+    odds = [calculate_path_odds(FB4, path) for path in FBW3_paths]
+    print(sum(odds)/len(odds))
+    #Returns 0.01943228612125649
