@@ -437,3 +437,48 @@ def permutation_test(
     percentile = percentileofscore(control_scores, score, 'weak')
     
     return score, percentile, control_scores
+
+def calculate_path_odds(
+        G:nx.DiGraph, 
+        path:list[str], 
+        default_weight:float = 0.0):
+    """Function to calculate the odds of a path occurring at random given the 
+    technical choices in another assemblage.
+
+    This function calculates the odss of a path occurring by looking at the 
+    edges visited by the path, extracting the relative frequencies of these 
+    edges from G, and then multiplying them with the chain rule.
+
+    The default_weight parameter can be used to overwrite the value of 
+    unobserved edges. Should these edges be visited by the path, the default 
+    weight will substitute the zero value in the calculation and prevent 
+    paths_odds == 0.0. Since the value of default_weight is arbitrary, use of 
+    this function for comparisons should be avoided.
+
+    Paramaters
+    ----------
+    G : networkx weighted diGraph object
+        Subgraph representing the relative frequencies of technical choices in 
+        an assemblage.
+    path : list
+        List of nodes representing a chaîne opératoire
+    default_weight : float
+        Odds of a technical choice occurring when this choice is not 
+        present in the subgraph. Interval (0, 1].
+
+    Returns
+    -------
+    odds : float
+        The odds of the path occurring at random in the input DiGraph. 
+    """
+    #Set default weights
+    for u,v,d in G.edges(data=True):
+        if d['weight'] == 0:
+            d['weight'] = default_weight
+
+    #Calculate odds
+    path_odds = (G[path[0]][path[1]]['weight'])/100
+    for first, second in zip(path[1:], path[2:]):
+        path_odds *= (G[first][second]['weight'])/100
+
+    return path_odds
