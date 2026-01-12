@@ -157,9 +157,25 @@ Where:
 - `n_control` is the number of control groups to use;
 - and `control_scores` are the Wasserstein distances to the controls.
 
+It is also possible to inspect the odds of an individual path occurring 
+given the relative frequencies of chocies in another ceramic assemblage.
+
+```python
+H = load_network(nodes, empirical_links2)
+odds = calculate_path_odds(
+    H, 
+    empirical_paths[0], 
+    default_weight = 0.001
+    )
+```
+Whereby `default_weight` represents acts as an edge weight for edges on 
+the path which are absent in the other dataset. Given that this weight 
+is arbitrary and may impact the heigth of the odds, it is best to avoid 
+this function for an assesment of shared knowledge.
+
 For further coding examples, see tests/tests.py.
 
-Happy hypothesis-testing!
+Happy hypothesis testing!
 
 ## Note on random path generation
 The procedure for random path generation in this script differs from 
