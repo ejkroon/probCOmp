@@ -168,9 +168,9 @@ odds = calculate_path_odds(
     default_weight = 0.001
     )
 ```
-Whereby `default_weight` represents acts as an edge weight for edges on 
-the path which are absent in the other dataset. Given that this weight 
-is arbitrary and may impact the heigth of the odds, it is best to avoid 
+Whereby `default_weight` acts as an edge weight for edges on the path
+which are absent in the other dataset. Given that this weight is
+arbitrary and may impact the heigth of the odds, it is best to avoid 
 this function for an assesment of shared knowledge.
 
 For further coding examples, see tests/tests.py.
