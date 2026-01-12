@@ -10,6 +10,7 @@ from functions import load_paths_to_graph
 from functions import compare_assemblages
 from functions import generate_control_from_link_list
 from functions import permutation_test
+from functions import calculate_path_odds
 
 __all__ = ['check_target_node',
              'generate_random_paths',
@@ -18,5 +19,6 @@ __all__ = ['check_target_node',
              'load_paths_to_graph',
              'compare_assemblages',
              'generate_control_from_link_list',
-             'permutation_test', 
+             'permutation_test',
+             'calculate_path_odds',  
 ]
