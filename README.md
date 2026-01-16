@@ -129,7 +129,22 @@ Where:
 - and `termination_chance` is the chance a production process stops with 
   each new step after firing.
 
-Lastly, this script also incorporates a functionality for performing a 
+A more complex version can be used to asses the mean squared error (MSE) 
+of the comparison, assuming the outcomes converge on the mean.
+
+```python
+import numpy as np
+
+outcomes = []
+for n in range(0, 100):
+    control_paths = generate_random_paths(G, 1000, 0.5)
+    outcomes.append(compare_assemblages(empirical_paths, control_paths))
+mean  = np.mean(outcomes)
+y_true = [mean for n in range(0, len(outcomes))]
+MSE = np.square(np.subtract(y_true, outcomes)).mean()
+```
+
+Lastly, the script also incorporates functionality for performing a 
 permutation test. This test compares the source of the comparison 
 (`empirical_links1` in the examples above) against a large number of 
 small control groups and calculates the percentile of the Wasserstein 
