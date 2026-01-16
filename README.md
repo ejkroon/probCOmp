@@ -144,13 +144,14 @@ y_true = [mean for n in range(0, len(outcomes))]
 MSE = np.square(np.subtract(y_true, outcomes)).mean()
 ```
 
-Lastly, the script also incorporates functionality for performing a 
-permutation test. This test compares the source of the comparison 
-(`empirical_links1` in the examples above) against a large number of 
-small control groups and calculates the percentile of the Wasserstein 
-distance between the empirical groups against the Wasserstein distances 
-to these control groups. As such, it estimates how exceptional the 
-amount of shared knowledge is relative to the control group.
+Lastly, the script also incorporates functionalities for assessing 
+robusticity. The first function is for performing a permutation test. 
+This test compares the source of the comparison (`empirical_links1` in 
+the examples above) against a large number of small control groups and 
+calculates the percentile of the Wasserstein distance between the 
+empirical groups against the Wasserstein distances to these control 
+groups. As such, it estimates how exceptional the Wasserstein distance 
+is relative to the control group.
 
 The permutation test can be performed as follows:
 
@@ -171,6 +172,25 @@ Where:
 - `control_size` is the number of paths in each control group;
 - `n_control` is the number of control groups to use;
 - and `control_scores` are the Wasserstein distances to the controls.
+
+The second function to assess robusticity applies to individual sets of 
+_chaînes opératoires_ and assesses how much influence a small subset of 
+the _chaînes opératoires_ in a dataset exerts over the Wasserstein 
+distance. It does so by calculating the mean squared error (MSE) over 
+the Wasserstein distances between the entire set and smaller subsets.
+
+```python
+MSE = check_sample_robusticity(
+    G, 
+    paths = empirical paths,
+    iterations = 1000,
+    subsample_size = 5 
+    )
+```
+Where:
+- `iterations` is the number of times to subsample the empirical dataset
+- `subsample_size` is the percentage of paths to remove from the  
+  dataset for each subsample.
 
 It is also possible to inspect the odds of an individual path occurring 
 given the relative frequencies of chocies in another ceramic assemblage.
