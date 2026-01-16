@@ -3,7 +3,7 @@ import csv
 from random import choices
 from scipy.stats import wasserstein_distance
 from scipy.stats import percentileofscore
-from collections import namedtuple
+import numpy as np
 
 def check_target_node(G:nx.DiGraph, path:list[str], target:str):
     """Function to check whether target node could be appended to a 
@@ -482,3 +482,54 @@ def calculate_path_odds(
         path_odds *= (G[first][second]['weight'])/100
 
     return path_odds
+
+def check_sample_robusticity(
+        G : nx.DiGraph, 
+        paths : list, 
+        iterations : int, 
+        subsample_size : int|float 
+        ):
+    """"Function to assess the effect of removing a user-specified percentage 
+    of vessels from the assemblage at random.
+
+    For each iteration, a subsample of the entire assemblage is taken and 
+    compared to the original assemblage. The mean squared error is then 
+    calculated from these Wasserstein distances relative to 0.0, which is the 
+    assumed true value.
+
+    Parameters
+    ----------
+    G : networkx DiGraph object
+        Network representing the total chaîne opératoire for ceramics
+    paths : list
+        List of lists representing ceramic chaînes opératories.
+    iterations : int
+        Number of iterations in the test.
+    subsample_size : float|int
+        Percentage of paths to remove from the assemblage in each iteration.
+
+    Returns
+    -------
+    MSE : float
+        Mean Squared Error of the Wasserstein distances from the subsamples 
+        to the whole assemblage.
+    """
+
+    n = len(paths)*(subsample_size/100)
+    if n <= 1:
+        k = len(paths)-1
+    else: 
+        k = len(paths)-int(round(n, 0))
+
+    scores = []
+    
+    for n in range(0, iterations):
+        subsample = choices(paths, k= k)
+        a = load_paths_to_graph(G, paths)
+        b = load_paths_to_graph(G, subsample)
+        scores.append(compare_assemblages(a, b))
+
+    y_pred = [0 for n in range(0, len(scores))]
+    MSE = np.square(np.subtract(y_pred, scores)).mean()
+
+    return MSE
